@@ -1,36 +1,7 @@
-# CMake YouCompleteMe Installation
-
-## Dependencies
-
-Make sure the [ack](https://github.com/beyondgrep/ack3) and [ctags](https://github.com/universal-ctags/ctags) packages are install on your system:
-
-    $ sudo pacman -S ack ctags
-
-Also install YCM dependencies:
-
+Run following:
 ```
-# Arch
-$ sudo pacman -S base-devel python clang llvm
-
-# Debian and Ubuntu
-$ sudo apt install build-essential python3-dev llvm-defaults
-
-# Fedora 
-$ sudo dnf install gcc-c++ make python3-devel clang clang-tools-extra
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-
-## Installing Plug-ins
-
-Firstly copy the `vimrc` file to your home directory to replace your current `.vimrc` file: 
-
-    $ cp -f ./cmake-ycm/vimrc ~/.vimrc
-
-Make sure the [Vundle](https://github.com/VundleVim/Vundle.vim) plug-in manager is installed on your system. If it's not, run the following commands:
-
-    $ cd ~/.vim
-    $ mkdir bundle && cd bundle
-    $ git clone https://https://github.com/VundleVim/Vundle.vim Vundle.git
-    $ cd ~
 
 Install the plug-ins by running the following on the command-line:
 
