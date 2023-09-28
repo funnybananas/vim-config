@@ -1,45 +1,42 @@
-# Vim Configuration Files
+Run following:
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
-A repository for storing Vim configuration files to set up Vim in specific ways.
+Install the plug-ins by running the following on the command-line:
 
-## Configuration File List
+    $ vim +PluginInstall +qall
 
-### Light IDE
+Vundle will download the required plug-in repositories to the `~/.vim/plugged` directory. 
 
-#### File location
-`light-ide/vimrc`
+To complete the YCM installation for CLang:
 
-#### Description
-A boilerplate IDE providing essential features including syntax highlighting, a file system explorer, file searching, class tags and color schemes.
+```
+# Clone submodules in downloaded YCM repository
+$ git submodule update --init --recursive
 
-#### Installation Instructions
+# Install YCM
+$ python3 install.py --clangd-completer
+```
 
-[light-ide/READEME.md](light-ide/README.md)
+To complete the YCM installation for All:
+1. Clone submodules in downloaded YCM repository
+```
+$ git submodule update --init --recursive
+```
+2. Install CMake, Vim and Python
+```
+apt install build-essential cmake vim-nox python3-dev
+```
+3. Install mono-complete, go, node, java and npm
+```
+apt install mono-complete golang nodejs openjdk-17-jdk openjdk-17-jre npm
+```
+4. Compile YCM
+```
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --all
+```
 
-### CMake YouCompleteMe
-
-#### File location
-
-`cmake-ycm/vimrc`
-
-#### Description
-
-A configuration that utilises CMake and the YouCompleteMe code completion engine. Provides a powerful C and C++ development environment. Builds on top of the [light-ide](light-ide/README.md) configuration.
-
-#### Installation Instructions
-
-[cmake-ycm/READEME.md](cmake-ycm/README.md)
-
-### Haskell IDE
-
-#### File Location
-`haskell-ide/vimrc`
-
-#### Description
-
-A boiletplate haskell IDE that has code completion and linting via the [coc.vim](https://github.com/neoclide/coc.nvim) plugin and backend [Haskell Language Server](https://github.com/haskell/haskell-language-server). Correct syntax highlighting, indentation, code search, and on-the-fly access to Haskell documentation are also enabled out of the box. Builds on top of the [light-ide](light-ide/README.md) configuration. 
-
-#### Installation Instructions
-
-[haskell-ide/RADME.md](haskell-ide/README.md)
+You will now be able to use the functionality provided by the cmake-ycm configuration next time you launch Vim!
 
